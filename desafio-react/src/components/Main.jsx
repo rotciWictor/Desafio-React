@@ -16,7 +16,7 @@ function Main() {
       date: date,
       status: status,
     };
-    console.log(newTask);
+   
     let allCards = cards;
     allCards.push(newTask);
     setCards(allCards);
@@ -30,8 +30,17 @@ function Main() {
     setStatus("");
   }
 
+  function deleteTask(index) {
+    let removeTask = cards.filter((task, i) => i !== index);
+    setCards(removeTask);
+  }
 
-  function editTask() {}
+  function editTask(index) {
+    setTasks(cards[index].tasks)
+    setDate(cards[index].date)
+    setStatus(cards[index].status)
+    deleteTask(index)
+  }
 
   return (
     <div className="register-task">
@@ -47,7 +56,7 @@ function Main() {
         setStatus={setStatus}
         addTask={addTask}
       />
-      <TaskBoard cards={cards} tasks={tasks} setTasks={setTasks}/>
+      <TaskBoard cards={cards} deleteTask={deleteTask} editTask={editTask}/>
     </div>
   );
 }

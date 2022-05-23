@@ -5,16 +5,10 @@ import Task from "./Task";
 
 function TaskBoard(props) {
 
-  function deleteTask() {
-    let removeTask = props.tasks.filter((task) => (task, i) => i !== 0);
-    props.setTasks(removeTask);
-  }
-
-
     let cards = props.cards.forEach((card,i) => {
         card.index = i;        
     });
-    console.log(cards,props.cards)
+  
 
   return (
     <section className="task-board">
@@ -28,7 +22,7 @@ function TaskBoard(props) {
           {props.cards
             .filter((card) => card.status === "todo")
             .map((card) => (
-              <Task key={card.index} task={card.tasks} date={card.date} />
+              <Task key={card.index} index={card.index} task={card.tasks} date={card.date} deleteTask={props.deleteTask} editTask={props.editTask}/>
             ))}
         </div>
         </div>
@@ -38,7 +32,7 @@ function TaskBoard(props) {
           {props.cards
             .filter((card) => card.status === "doing")
             .map((card) => (
-              <Task task={card.tasks} date={card.date} />
+              <Task key={card.index} task={card.tasks} date={card.date} index={card.index} deleteTask={props.deleteTask} editTask={props.editTask}/>
             ))}
             </div>
         </div>
@@ -48,7 +42,7 @@ function TaskBoard(props) {
           {props.cards
             .filter((card) => card.status === "completed")
             .map((card) => (
-              <Task task={card.tasks} date={card.date} index={card.index} deleteTask={deleteTask}/>
+              <Task key={card.index} task={card.tasks} date={card.date} index={card.index} deleteTask={props.deleteTask} editTask={props.editTask}/>
             ))}
         </div>
         </div>

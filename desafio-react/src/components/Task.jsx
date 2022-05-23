@@ -1,27 +1,30 @@
-import React from 'react';
-import {BsTrash2} from 'react-icons/bs';
-import {VscEdit} from 'react-icons/vsc';
+import React from "react";
+import { BsTrash2 } from "react-icons/bs";
+import { VscEdit } from "react-icons/vsc";
 
 function Task(props) {
-    let warning = "oi"
-    let today = new Date
-    if(props.date > today){
-        warning = " Tarefa Expirada"
-    }
+  let warning = "";
+  let deadline = new Date(props.date)
+  let today = new Date();
+  if (deadline < today) {
+    warning = " Tarefa Expirada";
+  }
 
   return (
-      <div className='new-task'>
-          <label>Descrição:</label>
-          <span>{props.task}</span>
-          <label>Prazo:</label>
-          <div>
-          <span>'{props.date} + {warning}'</span>
-          </div>
-          <div className='icons'>
-            <VscEdit/>
-            <BsTrash2 onClick={props.deleteTask()}/>  
-          </div>
+    <div className="new-task">
+      <label>Descrição:</label>
+      <span>{props.task}</span>
+      <label>Prazo:</label>
+      <div>
+        <span>
+          {props.date} {warning}
+        </span>
       </div>
+      <div className="icons">
+        <VscEdit onClick={() => props.editTask(props.index)}/>
+        <BsTrash2 onClick={() => props.deleteTask(props.index)} />
+      </div>
+    </div>
   );
 }
 
