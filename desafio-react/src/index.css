@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: #2E378A;
+    color: white;
+}
+
+.section-title{
+    border-bottom: #2E378A solid 2px;
+    width: 80%;
+    display: flex;
+    
+}
+
+
+h2{
+    width: 80%;
+    color: #2E378A;
+}
+
+.register-task, .task-board{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45vh;
+    padding-top: 2%;
+}
+
+.task-board{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    width: 100%;
+    height: auto;
+}  
+
+.inputs{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    height: auto;
+    margin-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.inputs input, select{
+    height: 5vh;
+    width: 30%;
+    border-radius: 1em;
+    background-color: white;
+    padding-left: 1%;
+    cursor: pointer;
+    border: #2E378A solid 1px;
+    border-top: none;
+}
+
+button{
+    all: unset;
+    height: 5vh;
+    width: 25%;
+    background-color: #2E378A;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icons{
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    gap: 25%;
+    border: black;
+}
+
+.new-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 14vh;
+    width: auto;
+    padding: 0vh 1%;
+    border: black solid 1px;
+}
+
+
+.task-board{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.boards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5%;
+    width: 78%;
+    height: auto;
+    padding: 4vh 0%;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    
+}
+
+.board-header-todo,.board-header-doing,.board-header-completed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D33A1D;
+    color: white;
+    font-weight: bold;
+    height: 7vh;
+    width: 100%;
+}
+
+.board-header-doing{
+    background-color: #DFD735;
+}
+
+.board-header-completed{
+    background-color: #6EE256;
+}
+
+.doing-tasks > div{
+    background-color:#FEF9CE;
+    border: #DFD735 solid 1px;
+}
+
+.todo-tasks > div{
+    background-color:#FAD0D0;
+    border: #D33A1D solid 1px;
+}
+
+.completed-tasks > div{
+    background-color: #DFFAE8;
+    border: #6EE256 solid 1px;
+}
+
+label{
+    color: #2E378A;
+}
