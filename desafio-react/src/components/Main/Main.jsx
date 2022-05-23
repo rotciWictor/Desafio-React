@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "./Form";
-import TaskBoard from "./Task-board";
+import Form from "../Forms/Form";
+import TaskBoard from "../Task-board/Task-board";
 import { useState } from "react";
 
 function Main() {
