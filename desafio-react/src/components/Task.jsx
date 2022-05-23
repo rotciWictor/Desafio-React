@@ -13,7 +13,7 @@ function Task(props) {
   return (
     <div className="new-task">
       <label>Descrição:</label>
-      <span>{props.task}</span>
+      <p>{props.task}</p>
       <label>Prazo:</label>
       <div>
         <span>

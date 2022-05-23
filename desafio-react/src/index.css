@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -56,15 +59,15 @@ h2{
 .inputs{
     display: flex;
     justify-content: space-around;
-    width: 90%;
+    width: 85%;
     height: auto;
-    margin-bottom: 2vh;
-    padding-top: 2vh;
+    margin-bottom: 5vh;
+    padding-top: 1vh;
 }
 
 .inputs input, select{
     height: 5vh;
-    width: 30%;
+    width: 25%;
     border-radius: 1em;
     background-color: white;
     padding-left: 1%;
@@ -96,9 +99,9 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 14vh;
+    height: 20vh;
     width: auto;
-    padding: 0vh 1%;
+    padding: 1vh 3%;
     border: black solid 1px;
 }
 
