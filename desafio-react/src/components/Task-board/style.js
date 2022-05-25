@@ -21,5 +21,5 @@ export const header = Styled.div`
 
 export const tasks = Styled.div`
     background-color:#FAD0D0;
-    border:#D33A1D";
+    border:#D33A1D;
 `;
