@@ -1,13 +1,12 @@
 import React from 'react';
+import * as S from "./style";
 
-// import { Container } from './styles';
 
 function Header() {
   return (
-      <header>
-          <h1>Gerenciador de Tarefas - Kanban</h1>
-      </header>
-      
+    <S.header>
+        <h1>Gerenciador de Tarefas - Kanban</h1>
+    </S.header>
   );
 }
 

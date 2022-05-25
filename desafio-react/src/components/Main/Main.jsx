@@ -1,7 +1,8 @@
 import React from "react";
 import Form from "../Forms/Form";
-import TaskBoard from "../Task-board/Task-board";
+import TaskBoard from "../Task-board/TaskBoard";
 import { useState } from "react";
+import * as S from "./style";
 
 function Main() {
   const [tasks, setTasks] = useState("");
@@ -16,7 +17,7 @@ function Main() {
       date: date,
       status: status,
     };
-   
+
     let allCards = cards;
     allCards.push(newTask);
     setCards(allCards);
@@ -36,17 +37,17 @@ function Main() {
   }
 
   function editTask(index) {
-    setTasks(cards[index].tasks)
-    setDate(cards[index].date)
-    setStatus(cards[index].status)
-    deleteTask(index)
+    setTasks(cards[index].tasks);
+    setDate(cards[index].date);
+    setStatus(cards[index].status);
+    deleteTask(index);
   }
 
   return (
-    <div className="register-task">
-      <div className="section-title">
-        <h2>Cadastrar uma Tarefa</h2>
-      </div>
+    <S.main>
+      <S.sectionTitle>
+        <S.title>Cadastrar uma Tarefa</S.title>
+      </S.sectionTitle>
       <Form
         setTasks={setTasks}
         tasks={tasks}
@@ -56,8 +57,44 @@ function Main() {
         setStatus={setStatus}
         addTask={addTask}
       />
-      <TaskBoard cards={cards} deleteTask={deleteTask} editTask={editTask}/>
-    </div>
+      <S.taskBoard>
+        <S.sectionTitle>
+          <S.title>Quadro de Tarefas</S.title>
+        </S.sectionTitle>
+        <S.boards>
+          <TaskBoard
+            cards={cards}
+            deleteTask={deleteTask}
+            editTask={editTask}
+            status="todo"
+            title="A Fazer"
+            background="red"
+            colorTaskBackground="red"
+            colorTaskBorder="red"
+          />
+          <TaskBoard
+            cards={cards}
+            deleteTask={deleteTask}
+            editTask={editTask}
+            status="doing"
+            title="Fazendo"
+            colorHeader="#DFD735"
+            colorTaskBackground="#FEF9CE"
+            colorTaskBorder="#DFD735"
+          />
+          <TaskBoard
+            cards={cards}
+            deleteTask={deleteTask}
+            editTask={editTask}
+            status="completed"
+            title="Finalizado"
+            colorHeader="#6EE256"
+            colorTaskBackground="#DFFAE8"
+            colorTaskBorder="#6EE256"
+          />
+        </S.boards>
+      </S.taskBoard>
+    </S.main>
   );
 }
 
