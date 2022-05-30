@@ -22,10 +22,10 @@ export const title = Styled.h2`
 
 export const taskBoard = Styled.section`
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
     width: 100%;
-    height: auto;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const boards = Styled.div`
